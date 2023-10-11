@@ -1,71 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="icon" href="favicon.ico" />
-    <title>Ebay Calculator</title>
-  </head>
-  <body>
-    <h2 class="dark-mode">Ebay Calculator</h2>
-    <form onsubmit="return false" autocomplete="off">
-      <label class="dark-mode" for="full-amount"
-        >Amount Listed For(inc Postage)(£):</label
-      ><br />
-      <input
-        type="number"
-        id="full-amount"
-        name="full-amount"
-        step="0.00000001"
-      /><br /><br />
-      <label class="profit_color" for="amount-received"
-        >Amount Received(£):</label
-      ><br />
-      <input
-        type="number"
-        id="amount-received"
-        name="amount-received"
-        step="0.00000001"
-      /><br /><br />
-      <label class="loss_color" for="extra-fees"
-        >Extra fees (Int Fee &amp; Fixed Fee)(£):</label
-      ><br />
-      <input
-        value="0.25"
-        type="number"
-        id="extra-fees"
-        name="extra-fees"
-        step="0.00000001"
-      />
-      <br /><br />
 
-      <button class="calculate_button" onclick="calculatePressed()">
-        Calculate
-      </button>
-      <br />
-      <button class="reset_button" onclick="resetPressed()">Reset</button>
-    </form>
-    <div class="dark-mode">
-      <p>
-        <span id="did_receive_one"></span>
-        <span id="did_receive_two"></span>
-      </p>
-      <p>
-        <span id="normally_receive_one"></span>
-        <span id="normally_receive_two"></span>
-      </p>
-      <p>
-        <span id="difference_one"></span>
-        <span id="difference_two"></span>
-      </p>
-      <p class="small_font">
-        <span id="based_on_one"></span>
-        <span id="based_on_two"></span>
-        <span id="based_on_three"></span>
-      </p>
-    </div>
-  </body>
-  <script src="js/main.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="favicon.ico" />
+  <title>Ebay Calculator</title>
+</head>
+
+<body>
+  <h2 class="dark-mode">Ebay Calculator</h2>
+  <form onsubmit="return false" autocomplete="off">
+    <label class="dark-mode" for="full-amount">Amount Listed For(inc Postage)(£):</label><br />
+    <input type="number" id="full-amount" name="full-amount" step="0.00000001" /><br /><br />
+    <label class="dark-mode" for="full-amount-used-for-fees">Amount Used For Fee Calculation(£):</label><br />
+    <input type="number" id="full-amount-used-for-fees" name="full-amount" step="0.00000001" /><br /><br />
+    <label class="profit_color" for="amount-received">Amount Received(£):</label><br />
+    <input type="number" id="amount-received" name="amount-received" step="0.00000001" /><br /><br />
+    <label class="loss_color" for="extra-fees">Extra fees (Int fee &amp; Fixed Fee)(£):</label><br />
+    <input value="0.25" type="number" id="extra-fees" name="extra-fees" step="0.00000001" />
+    <br /><br />
+
+    <button class="calculate_button" onclick="calculatePressed()">
+      Calculate
+    </button>
+    <br />
+    <button class="reset_button" onclick="resetPressed()">Reset</button>
+  </form>
+  <div class="dark-mode">
+    <p>
+      <span id="did_receive_one"></span>
+      <span id="did_receive_two"></span>
+    </p>
+    <p>
+      <span id="normally_receive_one"></span>
+      <span id="normally_receive_two"></span>
+    </p>
+    <p>
+      <span id="difference_one"></span>
+      <span id="difference_two"></span>
+    </p>
+    <p class="small_font">
+      <span id="based_on_one"></span>
+      <span id="based_on_two"></span>
+      <span id="based_on_three"></span>
+    </p>
+  </div>
+</body>
+<script src="js/main.js"></script>
+
 </html>
