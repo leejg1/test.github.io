@@ -27,6 +27,16 @@ function resetPressed() {
   resetResults();
 }
 
+/****************************/
+const first_amount_box = document.getElementById(full_amount_string);
+const second_amount_box = document.getElementById(
+  full_amount_used_for_fees_string
+);
+first_amount_box.addEventListener("input", function () {
+  second_amount_box.value = first_amount_box.value;
+});
+/****************************/
+
 function calculatePressed() {
   const full_amount = parseFloat(
     document.getElementById(full_amount_string).value
