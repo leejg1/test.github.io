@@ -7,9 +7,14 @@ body {
   text-align: center;
 }
 
-/* h2 {
+h2 {
+  margin-bottom: 10px;
+}
+
+h5 {
+  margin-top: 10px;
   color: white;
-} */
+}
 
 p {
   line-height: 0.9;

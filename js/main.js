@@ -50,14 +50,15 @@ function calculatePressed() {
     document.getElementById(amount_received_string).value
   );
 
+  const ten_percent_fee = Number(full_amount_used_for_fees * 0.1066666);
+
+  const reg_op_fee = Number(full_amount_used_for_fees * 0.0035);
+
   const extra_fees =
     parseFloat(document.getElementById(extra_fee_string).value) || 0;
 
-  const ten_percent_fee = Number(
-    (full_amount_used_for_fees * 0.1066666).toFixed(2)
-  );
-
-  const fee_should_have_paid = (ten_percent_fee + extra_fees) * 1.2;
+  const fee_should_have_paid =
+    (ten_percent_fee + reg_op_fee + extra_fees) * 1.2;
   console.log(fee_should_have_paid);
 
   const amount_should_have_received = full_amount - fee_should_have_paid;
@@ -94,8 +95,9 @@ function calculatePressed() {
       document.getElementById("difference_two").style.color = "#40ff00";
     }
 
-    document.getElementById("based_on_one").innerHTML =
-      "(Calculation based on 10.66% FV Fee + ";
+    document.getElementById(
+      "based_on_one"
+    ).innerHTML = `(Calculation based on 10.67% FV Fee + 0.35% Reg Op Fee +`;
     document.getElementById("based_on_two").innerHTML = `£${extra_fees.toFixed(
       2
     )} extra Fee`;
